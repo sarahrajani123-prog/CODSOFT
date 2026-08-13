@@ -29,6 +29,13 @@ class SimpleChatbot:
                 "You're welcome!",
                 "No problem at all!"
             ]),
+            (r'\b(what can you do ?)\b', [
+                "I can chat with you !"
+            ]),
+            (r'\b(what is your favourite coding language)\b', [
+                "My favourite coding language is python" !"
+                
+            ]),
             (r'\bweather\b', [
                 "I can't check live weather, but I hope it's nice where you are!"
             ]),
@@ -57,7 +64,7 @@ class SimpleChatbot:
 
 
 def main():
-    bot = SimpleChatbot(name="Chatty")
+    bot = SimpleChatbot(name="Becky")
     print(f"{bot.name}: Hi! Type 'bye' to end the chat.\n")
 
     while True:
@@ -72,4 +79,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-# CODESOFT-TASK1
