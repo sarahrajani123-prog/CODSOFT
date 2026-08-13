@@ -13,12 +13,11 @@ movies = {
 
 
 def recommend_movies(liked_movie):
-    # Get the genres of the movie the user likes
     liked_genres = movies[liked_movie]
 
     recommendations = []
 
-    # Go through every other movie and count matching genres
+    #
     for title, genres in movies.items():
         if title == liked_movie:
             continue
@@ -31,7 +30,6 @@ def recommend_movies(liked_movie):
         if match_count > 0:
             recommendations.append((title, match_count))
 
-    # Sort so movies with the most matching genres come first
     recommendations.sort(key=lambda x: x[1], reverse=True)
 
     return recommendations
@@ -42,7 +40,6 @@ def main():
     for title in movies:
         print("-", title)
 
-    # Keep asking for movies until the user wants to stop
     while True:
         liked_movie = input("\nEnter a movie you like (or type 'quit' to stop): ")
 
@@ -50,8 +47,6 @@ def main():
             print("Goodbye!")
             break
 
-        # Match the typed movie name to the correct one in our list,
-        # ignoring differences in uppercase/lowercase letters
         matched_movie = None
         for title in movies:
             if title.lower() == liked_movie.lower():
